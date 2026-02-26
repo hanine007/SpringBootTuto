@@ -6,10 +6,13 @@ import org.springframework.stereotype.Service;
 @PropertySource("classpath:test.properties")
 public class MyFirstService {
     private final  MyFirstClass myFirstClass;
+    //get value from env file 
     @Value("${app.name}")
     private String appName;
+    //get value from enn file that is not the appplication properties
     @Value("${app.test}")
 private String appTest;
+// constructor for the Myfirsclass to do the injection dependecies
     public MyFirstService (MyFirstClass myFirstClass){
         this.myFirstClass=myFirstClass;
     }
